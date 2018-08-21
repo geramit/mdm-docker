@@ -1,0 +1,39 @@
+# If loginSource=krb5ccache, following steps need to be done:
+#       1) Set krb5CcacheFile to an URL or leave it blank to use the default ccache location
+#               Example: com.ibm.SOAP.krb5CcacheFile=FILE:/utle/krb5cc_utle
+#       2) If the following options are existed in the wsjaas_client.conf file, set them to false
+#               useDefaultKeytab=false 
+#               useDefaultCcache=false 
+#               tryFirstPass=false 
+#               useFirstPass=false 
+#               forwardable=false 
+#               renewable=false 
+#               noaddress=false 
+# 
+# Note: For Microsoft Windows Kerberos native ccache, set the following properties to blank 
+#               com.ibm.SOAP.krb5CcacheFile=  
+#               com.ibm.SOAP.loginUserid=  
+#               com.ibm.SOAP.loginPassword=         
+#------------------------------------------------------------------------------
+com.ibm.SOAP.krb5CcacheFile=
+
+#------------------------------------------------------------------------------
+# - krb5Service              ( The Kerberos service name is the first part of a Kerberos 
+#                              Service Principal Name (SPN) of the target server.
+#                              example: the service name is WAS for the SPN 
+#                                        WAS/<hostname>@krbRealm )
+#------------------------------------------------------------------------------
+com.ibm.SOAP.krb5Service=
+
+#------------------------------------------------------------------------------
+# SOAP Request Timeout
+#
+# - timeout (specified in seconds [default 180], 0 implies no timeout)
+#
+#------------------------------------------------------------------------------
+com.ibm.SOAP.requestTimeout=0
+
+#------------------------------------------------------------------------------
+# SSL configuration alias referenced in ssl.client.props
+#------------------------------------------------------------------------------
+com.ibm.ssl.alias=DefaultSSLSettings
